@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin_Login</title>
-    <link rel="stylesheet" href="/CSS/admin_login.css"/>
-</head>
-<body>
-<header>
-            <h2> <a href="#" class="logo">Notion's</a></h2>
-            <input type="checkbox" id="check">
-            <div class="navigation">
-                <a href="index.html">HOME</a>
-                <a href="index.html">ABOUT</a>
-                <a href="index.html">LOGOUT</a>
-                <a href="client_SingUp.html">SIGNUP</a>
-                <a href="#">CONTACT</a>
-            </div>
-            <label for="check">
-                <i class="fas fa-bars menu-btn"></i>
-                <i class="fas fa-times close-btn"></i>
-            </label>
-        </header>
+    <link rel="stylesheet" href="./CSS/admin_login.css" />
+        <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <!-- FONT AWESOME -->
 
+    <!-- GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- GOOGLE FONTS -->
+  </head>
+    
+  </head>
+  <body>
+    <header>
+      <h2><a href="#" class="logo">Notion's</a></h2>
+      <input type="checkbox" id="check" />
+      <div class="navigation">
+        <a href="index.html">HOME</a>
+        <a href="index.html">ABOUT</a>
+        <a href="index.html">LOGOUT</a>
+        <a href="client_SingUp.html">SIGNUP</a>
+        <a href="#">CONTACT</a>
+      </div>
+      <label for="check">
+        <i class="fas fa-bars menu-btn"></i>
+        <i class="fas fa-times close-btn"></i>
+      </label>
+    </header>
+<!-- error section -->
+    <div id="error" class="error" style ="color: solid red"></div>
+<!-- error section -->
     <div class="container">
-        <div class="myform">
-            <form>
-                <h2>ADMIN LOGIN</h2>
-                <input type="text" placeholder="Admin UserName">
-                <input type="text" placeholder="Password">
-                <button type="submit">LOGIN</button>
-            </form>
-        </div>
+        <form id="form" class="myform">
+            <div class="myform">
+                <div class="header"><h2>ADMIN LOGIN</h2></div>
+                <input id="email" type="text" placeholder="Admin UserName" required/>
+                <span class="material-icons">check_circle</span>
+                <span class="material-icons">error</span>
+                <small>Error message</small>
+            </div>
+            <div class="myform">
+                <input id="password" type="password" placeholder="Password" required/>
+                <span class="material-icons">check_circle</span>
+                <span class="material-icons">error</span>
+                <small>Error message</small>
+            </div>
+            <button id ="signinbtn"type="submit">LOGIN</button>
+        </form>
         <div class="robot-image">
-            <img src="./Image/WECLOME ROBOT.jpg">
+            <img src="./Image/WECLOME ROBOT.jpg" />
         </div>
-            
     </div>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
+
+    <script defer src="./JS/firebaseConfiguration.js"></script>
+    <script defer src="./JS/admin_login.js"></script>
 </body>
 </html>

@@ -28,22 +28,18 @@
   <body>
     <!-- landing -->
     <header>
-      <h2><a href="#" class="logo">Notion's</a></h2>
-      <input type="checkbox" id="check" />
-      <div class="navigation">
-        <a href="#">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#blogs">BLOGS</a>
-        <a href="#footer">CONTACT</a>
-        <a href="admin_login.html">LOGIN</a>
-        <a href="client_SingUp.html">SIGNUP</a>
+      <div class="logo">
+        <h2 class="logo-text">Notion's</h2>
       </div>
-      <!-- <label for="check">
-        <i class="fas fa-bars menu-btn"></i>
-        <i class="fas fa-times close-btn"></i>
-      </label> -->
+      <ul class="navigation">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#blogs">BLOGS</a></li>
+          <li><a href="#footer">CONTACT</a></li>
+          <li><a href="admin_login.html">LOGIN</a></li>
+          <li><a href="client_SingUp.html">SIGNUP</a></li>
+      </ul>
     </header>
-
     <section class="container">
       <divb class="content">
         <div class="info">
@@ -142,67 +138,8 @@
     <section>
       <h2 class="title" id="blogs">Blogs</h2>
       <div class="s_blogs">
-        <div class="blogs">
-          <div class="B_description">
-            <img src="./Image/house.jpg" alt="Thierry's photo" />
-            <div class="blog-title">
-              <h4>Who is Thierry Twahirwa?</h4>
-              <p>
-                FrontEnd Developer who focuses on writing clean, elegant
-                efficient code
-              </p>
-              <a href="./blog.html">
-                  <button class="btn-blog">Read More</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="blogs">
-          <div class="B_description">
-            <img src="./Image/NODEJS.jpg" alt="js cheatsheet" />
-            <div class="blog-title">
-              <h4>Node.js Vulnerability Cheatsheet</h4>
-              <p>
-                FrontEnd Developer who focuses on writing clean, elegant
-                efficient code
-              </p>
-              <a href="./blog.html">
-                  <button class="btn-blog">Read More</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="blogs">
-          <div class="B_description">
-            <img src="./Image/Fossey Gorilla fund.jpg" alt="Thierry's photo" />
-            <div class="blog-title">
-              <h4>Who is Thierry Twahirwa?</h4>
-              <p>
-                FrontEnd Developer who focuses on writing clean, elegant
-                efficient code
-              </p>
-              <a href="./blog.html">
-                  <button class="btn-blog">Read More</button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="blogs">
-          <div class="B_description">
-            <img src="./Image/alex-knight-2EJCSULRwC8-unsplash_.jpg" alt="Thierry's photo" />
-            <div class="blog-title">
-              <h4>Who is Thierry Twahirwa?</h4>
-              <p>
-                FrontEnd Developer who focuses on writing clean, elegant
-                efficient code
-              </p>
-              <a href="./blog.html">
-                  <button class="btn-blog">Read More</button>
-              </a>
-            </div>
-          </div>
+        <div class="blogs"id="landing__blog">
+          
         </div>
       </div>
     </section>
@@ -210,30 +147,30 @@
     <!-- contact -->
     <footer id="footer" class="footer">
       <h2 class="contact-title">Contact Me</h2>
-      <h2 class="footer-logo">Notion's</h2>
-      <div class="f-contacts">
-        <div>
-          <div>
-            <h4 class="info-title">Contact Info</h4>
-          </div>
-          <i class="material-icons">place</i>
-          <h4>Nyarugenge, Kigali</h4>
-          <i class="material-icons">email</i>
-          <h4>ttwahirwa2@gmail.com</h4>
-          <i class="material-icons">call</i>
-          <h4>
+      <div class="logo">
+        <h2 class="logo-text">Notion's</h2>
+      </div>
+      <div class="f-contacts"> 
+          <div class="info-title"><h4>Contact Info</h4></div>
+          <div class="f-details">
+            <i class="material-icons">place</i>
+            <h4>Nyarugenge, Kigali</h4>
+            <i class="material-icons">email</i>
+            <h4>ttwahirwa2@gmail.com</h4>
+            <i class="material-icons">call</i>
+            <h4>
             (+250) 784977940 <br />
             (+250) 728666404
-          </h4>
-        </div>
-
+            </h4>
+          </div>
+      
         <div class="wrapper">
           <div class="form">
-            <form>
+            <form id="form">
               <h2>GOT ANY QUESTIONS!</h2>
               <input
                 type="text"
-                id="name"
+                id="username"
                 name="name"
                 placeholder="Type your name here"
               /><br />
@@ -244,19 +181,20 @@
                 placeholder="Type your Phone Number here"
               /><br />
               <input
-                type="mail"
-                id="mail"
-                name="mail"
+                type="email"
+                id="email"
+                name="email"
                 placeholder="Type your Email here"
               /><br />
               <textarea
                 rows="2"
                 cols="50"
+                id="comment"
                 name="comment"
                 placeholder="Type your question here..."
               ></textarea
               ><br />
-              <button type="submit">SUBMIT</button>
+              <button id="contact" type="submit">SUBMIT</button>
             </form>
           </div>
           <div class="robot-image">
@@ -265,5 +203,13 @@
         </div>
       </div>
     </footer>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
+
+    <script defer src="./JS/firebaseConfiguration.js"></script>
+    <script defer src="./JS/contact.js"></script>
+    <script defer src="./JS/index.js"></script>
   </body>
 </html>

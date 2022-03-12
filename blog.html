@@ -33,49 +33,28 @@
     </header>
 
     <div class="container-single">
-      <div class="main-content">
-        <h1 class="post-title">Node.js Vulnerability Cheatsheet</h1>
-        <img src="./Image/NODEJS.jpg" alt="js photo" />
-        <p>
-          Securing applications is not the easiest thing to do. An application
-          has many components: server-side logic, client-side logic, data
-          storage, data transportation, API, and more. With all these components
-          to secure, building a secure application can seem really daunting.
-          Thankfully, most real-life vulnerabilities share the same root causes.
-          And by studying these common vulnerability types, why they happen, and
-          how to spot them, you can learn to prevent them and secure your
-          application. The use of every language, framework, or environment
-          exposes the application to a unique set of vulnerabilities. The first
-          step to fixing vulnerabilities in your application is to know what to
-          look for. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Fugit ipsum culpa excepturi sed inventore vel unde et sit deserunt
-          distinctio similique amet, quas consectetur tenetur eveniet vero
-          quibusdam numquam quisquam.
-        </p>
-
-        <div class="icons">
-          <span>Author: Thierry04</span>
-          <i class="material-icons">thumb_up</i>
-          <i class="material-icons">thumb_down</i>
-          <i class="material-icons">comment</i>
-          <i class="material-icons">share</i>
-        </div>
-
-        <form class="comment">
-          <textarea
-            rows="10"
-            cols="100"
-            name="comment"
-            placeholder="Leave a comment here..."
-          >
-          </textarea>
-          <br />
-          <a href="#">
-            <button class="submit-btn" type="submit">SUBMIT</button>
-          </a>
-        </form>
+      
+      <div id="singleBlog">
+        <div id="singleBlogs"></div>
+      <div class="icons">
+        <span>Author: Thierry04</span>
+       <i class="material-icons">thumb_up</i>
+       <i class="material-icons">thumb_down</i>
+       <i class="material-icons">comment</i>
+       <i class="material-icons">share</i>
       </div>
-
+    <form>
+       <textarea class="comment"
+           rows="10"
+           cols="100"
+           name="comment"
+            placeholder="Leave a comment here..."
+        ></textarea>
+        <br />
+        <button id="submit-btn">SUBMIT</button>
+    </form>
+    <div class="comment-list"></div>
+      </div>
       <div class="sidebar">
         <!-- SEARCH ICONS -->
         <div class="section-search">
@@ -153,7 +132,7 @@
                   placeholder="Type your question here..."
                 ></textarea
                 ><br />
-                <button type="submit">SUBMIT</button>
+                <!-- <button type="submit">SUBMIT</button> -->
               </form>
             </div>
             <div class="robot-image">
@@ -162,5 +141,12 @@
           </div>
         </div>
       </footer>
+      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
+
+    <script defer src="./JS/firebaseConfiguration.js"></script>
+    <script defer src="./JS/singleBlog.js"></script>
   </body>
 </html>

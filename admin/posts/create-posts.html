@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Section - Add Posts</title>
+    <!-- Styling -->
+    <link rel="stylesheet" href="../../CSS/admin-posts.css" />
+    <!-- styling -->
+ 
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- google fonts -->
+
+    <!-- font owesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <!-- font owesome -->
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h2 class="logo-text">Notion's</h2>
+      </div>
+      <ul class="navigation">
+          <li>
+              <i class="material-icons">account_circle</i>
+                ThierryTwahirwa
+              <i class="fas fa-chevron-down" style="font-size: .8em;"></i>  
+              </a>
+              <ul>
+                <li><a href="#" class="logout">Logout</a></li>
+              </ul>
+          </li>
+      </ul>
+    </header>
+
+    <!-- Admin Page-Wrapper -->
+    <div class="admin-wrapper">
+      <!-- left side bar -->
+       <div class="left-sidebar">
+        <ul>
+          <li><a href="../posts/create-posts.html">Manage Posts</a></li>
+          <li><a href="../users/create-users.html">Manage Users</a></li> 
+          <li><a href="../topics/create-topics.html">Manage Topics</a></li> 
+        </ul>
+       </div>
+       <!-- left sidebar -->
+
+       <!-- admin content -->
+       <div class="admin-content">
+         <div class="button-group">
+           <a href="../posts/create-posts.html" class="btn btn-big">Add Post</a>
+           <a href="../posts/index-posts.html" class="btn btn-big">Manage Post</a>
+         </div>
+
+         <div class="content">
+           <h2 class="page-title">Manage Posts</h2>
+
+           <form class="create.html" method="post">
+             <div class="">
+               <div class="input"> <label>
+                 Title</label></div>
+                 <input class= "input" type="text" name="title" class="text-input" id="title">
+             </div>
+             <div class="">
+               <div class="input">
+                 <label>
+                   Image</label>
+                  </div>
+                  <input class="input" type="file" name="file" class="fa-file-image"id="imageFile">
+             </div> 
+             <div class="">
+               <div class="input"><label>
+                 body</label></div>
+                <textarea
+                
+                  name="myTextarea"
+                  id="myTextarea"
+                  required
+                  cols="100"
+                  rows="7"
+                ></textarea>
+             </div>
+             
+             <div class="">
+               <label>Topic</label>
+               <select name="topic" class="text-input">
+                 <option value="Poetry">Poetry</option> class=""></option>
+                 <option value="Technology">Technology</option> class=""></option>
+                </select>
+                <!-- <textarea name="body" id="blog"></textarea> -->
+             </div> 
+             <div>
+               <button class="btn-blog" id="create__blog" type="submit" class="btn btn-big">Add Post</button>
+                <button class="btn-blog" id="update__blog" type="submit" class="btn btn-big">Update </button>
+             </div> 
+           </form>
+         </div>
+       </div>
+       <!-- admin content -->
+    </div>
+ <!-- blog -->
+<section>
+  <div class="s_blogs">
+    <div class="blogs" id="dashboard_blog__display">
+    
+    </div>
+
+  </div>
+</section>;
+<script defer>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+    <script defer src="../../JS/scripts.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
+    <script defer  src="./../../JS/firebaseConfiguration.js"></script>
+
+    <script defer src="./../../JS/dashboard_blogs.js"></script>
+
+  </body>
+</html>

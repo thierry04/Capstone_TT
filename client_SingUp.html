@@ -12,10 +12,10 @@
             <h2> <a href="#" class="logo">Notion's</a></h2>
             <input type="checkbox" id="check">
             <div class="navigation">
-                <a href="#">HOME</a>
-                <a href="#">BLOG</a>
-                <a href="#">LOGIN</a>
-                <a href="#">CONTACT</a>
+                <a href="./index.html">HOME</a>
+                <a href="./index.html">BLOG</a>
+                <a href="./admin_login.html">LOGIN</a>
+                <a href="./index.html">CONTACT</a>
             </div>
             <label for="check">
                 <i class="fas fa-bars menu-btn"></i>
@@ -27,12 +27,12 @@
         <div class="myform">
             <form>
                 <h2>CLIENT SIGN-UP</h2>
-                <input type="text" placeholder="Enter your Family Name">
-                <input type="text" placeholder="Enter your Last Name">
-                <input type="email" placeholder="Enter your email address">
-                <input type="text" placeholder="Password">
-                <input type="text" placeholder="Repeat Password">
-                <button type="submit">SIGN-UP</button>
+                <!-- <input type="text" placeholder="Enter your Family Name">
+                <input type="text" placeholder="Enter your Last Name"> -->
+                <input type="email"id="email" placeholder="Enter your email address">
+                <input type="text" id="password" placeholder="Password">
+                <!-- <input type="text" placeholder="Repeat Password"> -->
+                <button id="signupbtn" type="submit">SIGN-UP</button>
             </form>
         </div>
         <div class="robot-image">
@@ -40,5 +40,12 @@
         </div>
             
     </div>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
+
+    <script defer src="./JS/firebaseConfiguration.js"></script>
+    <script defer src="./JS/user_signup.js"></script>
 </body>
 </html>
