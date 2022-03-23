@@ -1,4 +1,20 @@
 // create__blog
+// const loggedIn = JSON.parse(localStorage.getItem('token'))
+// const createArticle = async(e)=>{
+//     e.preventDefault();
+//     const title = document.getElementById('title').value;
+//     const content = document.getElementById('myTextarea').value;
+//     const data = await fetch('http://localhost:5000/api/v1/article',{
+//         method:'GET',
+//         headers:{
+//             'content-Type':'application/json',
+//             'Access-Control-Cross-Origin':'*',
+//             authorization:`Bearer ${loggedIn}`
+//         },
+//     });
+//     const response = await data.json();
+//     console.log(response,'==== this works right');
+// }
 
 const CreateBlog = (event) => {
     event.preventDefault()
@@ -47,7 +63,7 @@ const CreateBlog = (event) => {
     )
 }
 
-document.getElementById("create__blog").addEventListener("click", CreateBlog)
+document.getElementById("createBlog").addEventListener("click", CreateBlog)
 
 db.collection("blogs").orderBy("timestamp", "desc").onSnapshot((blog) => {
     const data = blog.docs.map((doc) => ({ id: doc.id, data: doc.data() }))

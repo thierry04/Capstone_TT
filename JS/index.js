@@ -24,3 +24,31 @@ function singleBlog(id){
  localStorage.setItem("singleBlogId",JSON.stringify({id:id}))
 }
 
+const blogHtml = document.querySelector('#landing__blog')
+async function blogs() {
+    const findBlogs = await fetch('http://localhost:5000/api/v1/article', {
+        method: 'GET',
+        headers: {
+            'content-Type': 'application/json',
+            'Access-Control-Cross-Origin': '*'
+        }
+    })
+    const blogs = await findBlogs.json();
+
+    blogs.foundArticle.map((article, index) => {
+        let html = `<div class="B_description" key=${article._id}>
+    <img src=${blog.data.ImageUrl} alt="Thierry's photo" />
+    <div class="blog-title">
+        <h4>${article.Title}</h4>
+        <p>
+         ${article.content}
+        </p>
+        <a href="./blog.html" onclick="singleBlog('${article._id}')">
+            <button class="btn-blog">Read More</button>
+        </a>
+    </div>
+     </div>`
+        blogHtml.innerHTML += html
+    })
+}
+blogs()
