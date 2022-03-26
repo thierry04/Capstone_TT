@@ -1,6 +1,6 @@
 ClassicEditor
-    .create( document.querySelector( '#body' ), {
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+    .create(document.querySelector('#body'), {
+        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
         heading: {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -8,10 +8,10 @@ ClassicEditor
                 { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
             ]
         }
-    } )
-    .catch( error => {
-        console.log( error );
-    } );
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
 
 // form validation --admin-login

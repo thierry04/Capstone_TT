@@ -1,20 +1,4 @@
 // create__blog
-// const loggedIn = JSON.parse(localStorage.getItem('token'))
-// const createArticle = async(e)=>{
-//     e.preventDefault();
-//     const title = document.getElementById('title').value;
-//     const content = document.getElementById('myTextarea').value;
-//     const data = await fetch('http://localhost:5000/api/v1/article',{
-//         method:'GET',
-//         headers:{
-//             'content-Type':'application/json',
-//             'Access-Control-Cross-Origin':'*',
-//             authorization:`Bearer ${loggedIn}`
-//         },
-//     });
-//     const response = await data.json();
-//     console.log(response,'==== this works right');
-// }
 
 const CreateBlog = (event) => {
     event.preventDefault()
@@ -63,13 +47,50 @@ const CreateBlog = (event) => {
     )
 }
 
-document.getElementById("createBlog").addEventListener("click", CreateBlog)
+
+//create comment using rest API
+
+const createPost = async (e) => {
+    const title = document.querySelector('#title');
+    const content = document.querySelector('#content');
+    const files = document.querySelector('#imageFile');
+    const loggedIn = localStorage.getItem('token');
+    e.preventDefault();
+    if ((title.value || content.value) === null) {
+        alert('any input fields can not be empty')
+    }
+    const dataFormated = new FormData();
+    dataFormated.append('title', title.value);
+    dataFormated.append('content', content.value);
+    dataFormated.append('imageUrl', files.files[0]);
+    const post = await fetch('https://my-brand-server.herokuapp.com/api/v1/posts', {
+        method: 'post',
+        headers: {
+            authorization: `Bearer ${loggedIn}`
+        },
+        body: dataFormated
+
+    })
+    const data = await post.json();
+    if (data.status === 201) {
+        alert(`${data.message}`);
+        setTimeout(() => {
+            window.location.replace('./index-posts.html');
+        }, 3000)
+    } else if (data.status === 400 || data.status === 401) {
+        alert(`${data.message}`)
+    } else {
+        alert(`${data.message}`)
+    }
+}
+
+document.getElementById("createBlog").addEventListener("click", createPost)
 
 db.collection("blogs").orderBy("timestamp", "desc").onSnapshot((blog) => {
     const data = blog.docs.map((doc) => ({ id: doc.id, data: doc.data() }))
 
-    document.getElementById('dashboard_blog__display').innerHTML= data.map((blog) => (
-      `  <div class="B_description">
+    document.getElementById('dashboard_blog__display').innerHTML = data.map((blog) => (
+        `  <div class="B_description">
         <img src=${blog.data.ImageUrl} alt="" />
         <div class="blog-title">
           <h4>${blog.data.Title}</h4>
@@ -85,22 +106,22 @@ db.collection("blogs").orderBy("timestamp", "desc").onSnapshot((blog) => {
 
 })
 
-function getId(id){
+function getId(id) {
 
-    localStorage.setItem("blogId",JSON.stringify({id:id}))
+    localStorage.setItem("blogId", JSON.stringify({ id: id }))
 
-      db.collection("blogs").doc(id).get().then((doc)=>{
+    db.collection("blogs").doc(id).get().then((doc) => {
         document.getElementById('title').value = doc.data().Title
-      document.getElementById("myTextarea").value =doc.data().Blog
-    }).catch((error)=>{
+        document.getElementById("myTextarea").value = doc.data().Blog
+    }).catch((error) => {
         console.log(error)
     })
 }
 
-    
 
 
-function updateBlog(event){
+
+function updateBlog(event) {
     event.preventDefault()
 
 
@@ -132,14 +153,14 @@ function updateBlog(event){
         () => {
             uploadTask.snapshot.ref.getDownloadURL().then((downloadedImage) => {
                 db.collection("blogs").doc(JSON.parse(localStorage.getItem("blogId")).id).set({
-                        Title: title,
-                        ImageUrl: downloadedImage,
-                        Blog: blogData,
-                        CreatedAt: Date.now(),
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    },
+                    Title: title,
+                    ImageUrl: downloadedImage,
+                    Blog: blogData,
+                    CreatedAt: Date.now(),
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                },
                     {
-                    merge:true
+                        merge: true
                     })
                     .then((blogs) => {
                         console.log(blogs.data())
@@ -157,11 +178,11 @@ document.getElementById("update__blog").addEventListener("click", updateBlog)
 
 
 
-function deleteBlog(id){
- db.collection("blogs").doc(id).delete().then(()=>{
-  console.log("Blog deleted Successfully")
- }).catch((error)=>{
-     console.log(error)
- })
+function deleteBlog(id) {
+    db.collection("blogs").doc(id).delete().then(() => {
+        console.log("Blog deleted Successfully")
+    }).catch((error) => {
+        console.log(error)
+    })
 
 }
