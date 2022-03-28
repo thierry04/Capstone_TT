@@ -1,63 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Single post</title>
-    <link rel="stylesheet" href="./CSS/blog.css" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- google fonts -->
-  </head>
-  <body>
-    <header>
-      <h2 class="logo">Notion's</h2>
-      <input type="checkbox" id="check" />
-      <div class="navigation">
-        <a href="index.html">HOME</a>
-        <a href="index.html">ABOUT</a>
-        <a href="index.html">LOGOUT</a>
-        <a href="#footer">CONTACT</a>
-        <!-- <li>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single post</title>
+  <link rel="stylesheet" href="./CSS/blog.css" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- google fonts -->
+</head>
+
+<body>
+  <header>
+    <h2 class="logo">Notion's</h2>
+    <input type="checkbox" id="check" />
+    <div class="navigation">
+      <a href="index.html">HOME</a>
+      <a href="index.html">ABOUT</a>
+      <a href="index.html">LOGOUT</a>
+      <a href="#footer">CONTACT</a>
+      <!-- <li>
           <a href="client_SingUp.html">SIGNUP</a>
         </li> -->
-      </div>
-      <label for="check">
-        <span class="material-icons">menu</span>
-        <i class="fas fa-times close-btn"></i>
-      </label>
-    </header>
+    </div>
+    <label for="check">
+      <span class="material-icons">menu</span>
+      <i class="fas fa-times close-btn"></i>
+    </label>
+  </header>
 
-    <div class="container-single">
-      
-      <div id="singleBlog">
-        <div id="singleBlogs"></div>
+  <div class="container-single">
+
+    <div id="singleBlog">
+      <div id="singleBlogs"></div>
       <div class="icons">
         <span>Author: Thierry04</span>
-       <i class="material-icons">thumb_up</i>
-       <!-- <i class="material-icons">thumb_down</i> -->
-       <i class="material-icons">comment</i>
-       <!-- <i class="material-icons">share</i> -->
-      </div>
-    <form>
-       <textarea class="comment"
-           rows="10"
-           cols="100"
-           name="comment"
-            placeholder="Leave a comment here..."
-        ></textarea>
-        <br />
-        <button id="submit-btn">SUBMIT</button>
-    </form>
-    <div class="comment-list"></div>
+        <i class="material-icons">thumb_up</i>
+        <!-- <i class="material-icons">thumb_down</i> -->
+        <i class="material-icons">comment</i>
+        <!-- <i class="material-icons">share</i> -->
       </div>
     </div>
-    <!-- footer -->
-    <footer id="footer" class="footer">
+      <form>
+        <textarea class="comment" rows="10" cols="100" name="comment" placeholder="Leave a comment here..."></textarea>
+        <br />
+        <button id="submit-btn">SUBMIT</button>
+      </form>
+      <div class="comment-list"></div>
+      <!-- footer -->
+      <footer id="footer" class="footer">
         <h2 class="contact-title">Contact me</h2>
         <h2 class="footer-logo">Notion's</h2>
         <div class="f-contacts">
@@ -80,31 +73,10 @@
             <div class="form">
               <form>
                 <h2>GOT ANY QUESTIONS!</h2>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Type your name here"
-                /><br />
-                <input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  placeholder="Type your Phone Number here"
-                /><br />
-                <input
-                  type="mail"
-                  id="mail"
-                  name="mail"
-                  placeholder="Type your Email here"
-                /><br />
-                <textarea
-                  rows="2"
-                  cols="50"
-                  name="comment"
-                  placeholder="Type your question here..."
-                ></textarea
-                ><br />
+                <input type="text" id="name" name="name" placeholder="Type your name here" /><br />
+                <input type="text" id="phone" name="phone" placeholder="Type your Phone Number here" /><br />
+                <input type="mail" id="mail" name="mail" placeholder="Type your Email here" /><br />
+                <textarea rows="2" cols="50" name="comment" placeholder="Type your question here..."></textarea><br />
                 <!-- <button type="submit">SUBMIT</button> -->
               </form>
             </div>
@@ -115,11 +87,12 @@
         </div>
       </footer>
       <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
-    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
+      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
 
-    <script defer src="./JS/firebaseConfiguration.js"></script>
-    <script defer src="./JS/singleBlog.js"></script>
-  </body>
+      <script defer src="./JS/firebaseConfiguration.js"></script>
+      <script defer src="./JS/singleBlog.js"></script>
+</body>
+
 </html>
