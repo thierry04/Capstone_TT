@@ -389,6 +389,26 @@ label {
   background: none;
   cursor: pointer;
 }
+
+#contact{
+  cursor: pointer;
+  width: 100px;
+  border-style: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  padding: 5px;
+  position: absolute;
+  top:85%;
+  left: 40%;
+  font-size: 14px;
+  background: #a69a30;
+  text-align:center
+}
+
 .adverts {
   display: flex;
   padding: 0px 100px;
@@ -541,7 +561,7 @@ div.wrapper div.form input, textarea{
     padding: 5px 0;
     font-size: 14px;
     width: 300px;
-    color: black;   
+    color:#000000;   
 }
 
 div.wrapper div.form button{
@@ -572,3 +592,55 @@ div.wrapper div.form button{
   left: 0%;
 }
 /* footer */
+/* @media (max-width: 560px) {
+  .content .info h2 {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .content .info h2 span {
+    font-size: 30px;
+    font-weight: 600p;
+  }
+  .content .info p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 960px) {
+  header .navigation {
+    display: none;
+  }
+}
+body {
+    display:flex
+  }
+/* Mobile Styles */
+/* @media only screen and (max-width: 425px) {
+  body {
+    background-color: darkcyan;
+    flex-direction: column;
+  }
+} */
+
+/* Tablet Styles */
+/* @media only screen and (min-width: 426px) and (max-width: 960px){
+  body {
+    background-color: maroon;
+    flex-direction: column;
+  }
+} */
+
+/* Desktop Styles */
+/* @media only screen and (min-width: 961px) and (max-width: 1439px) {
+  body {
+   background-color: gold;
+  }
+} */
+
+/* Widescreens Styles */
+/* @media only screen and (min-width: 1440px) {
+  body {
+    background-color: grey;
+  }
+} */

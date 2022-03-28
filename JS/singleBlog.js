@@ -55,8 +55,22 @@ db.collection("blogs")
   .catch((error) => {
     console.log(error);
   });
-
-
+const getPosts = JSON.parse(localStorage.getItem('posts'));
+getPosts.data.map((element) => {
+  console.log(element);
+  if (id == element._id) {
+    console.log(element);
+    const showLikes = document.querySelector(".likes-data");
+    const liked = document.querySelector(".likes");
+    showLikes.innerText = `${element.likes === null ? 0 : element.likes} likes`;
+    liked.addEventListener("click", () => {
+      element.like++;
+      const articleString = JSON.stringify(getBlogsData);
+      localStorage.setItem("blogList", articleString);
+      showLikes.innerText = `${element.like} likes`;
+    });
+  }
+})
 
 const commentBtn = document.querySelector("#submit-btn");
 commentBtn.addEventListener('click',(e)=>{

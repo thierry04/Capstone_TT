@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +10,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- google fonts -->
 </head>
-
 <body>
   <header>
     <h2 class="logo">Notion's</h2>
@@ -32,67 +30,72 @@
   </header>
 
   <div class="container-single">
-
-    <div id="singleBlog">
-      <div id="singleBlogs"></div>
-      <div class="icons">
-        <span>Author: Thierry04</span>
-        <i class="material-icons">thumb_up</i>
-        <!-- <i class="material-icons">thumb_down</i> -->
-        <i class="material-icons">comment</i>
-        <!-- <i class="material-icons">share</i> -->
+    <div id="singleBlogs"></div>
+    <div class="icons">
+      <span>Author: Thierry04</span>
+      <div class="like">
+        <i class="material-icons likes">thumb_up</i>
+        <p class="likes-data"></p>
       </div>
+      <!-- <i class="material-icons">thumb_down</i> -->
+      <i class="material-icons">comment</i>
+      <!-- <i class="material-icons">share</i> -->
     </div>
-      <form>
-        <textarea class="comment" rows="10" cols="100" name="comment" placeholder="Leave a comment here..."></textarea>
-        <br />
-        <button id="submit-btn">SUBMIT</button>
-      </form>
-      <div class="comment-list"></div>
-      <!-- footer -->
-      <footer id="footer" class="footer">
-        <h2 class="contact-title">Contact me</h2>
-        <h2 class="footer-logo">Notion's</h2>
-        <div class="f-contacts">
+    <form>
+      <textarea class="comment" rows="10" cols="100" name="comment" placeholder="Leave a comment here..."></textarea>
+      <br />
+      <button id="submit-btn">SUBMIT</button>
+    </form>
+    <div class="comment-list"></div>
+    </div>
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <h2 class="contact-title">Contact me</h2>
+      <h2 class="footer-logo">Notion's</h2>
+      <div class="f-contacts">
+        <div>
           <div>
-            <div>
-              <h4 class="info-title">Contact Info</h4>
-            </div>
-            <i class="material-icons">place</i>
-            <h4>Nyarugenge, Kigali</h4>
-            <i class="material-icons">email</i>
-            <h4>ttwahirwa2@gmail.com</h4>
-            <i class="material-icons">call</i>
-            <h4>
-              (+250) 784977940 <br />
-              (+250) 728666404
-            </h4>
+            <h4 class="info-title">Contact Info</h4>
           </div>
+          <i class="material-icons">place</i>
+          <h4>Nyarugenge, Kigali</h4>
+          <i class="material-icons">email</i>
+          <h4>ttwahirwa2@gmail.com</h4>
+          <i class="material-icons">call</i>
+          <h4>
+            (+250) 784977940 <br />
+            (+250) 728666404
+          </h4>
+        </div>
 
-          <div class="wrapper">
-            <div class="form">
-              <form>
-                <h2>GOT ANY QUESTIONS!</h2>
-                <input type="text" id="name" name="name" placeholder="Type your name here" /><br />
-                <input type="text" id="phone" name="phone" placeholder="Type your Phone Number here" /><br />
-                <input type="mail" id="mail" name="mail" placeholder="Type your Email here" /><br />
-                <textarea rows="2" cols="50" name="comment" placeholder="Type your question here..."></textarea><br />
-                <!-- <button type="submit">SUBMIT</button> -->
-              </form>
-            </div>
-            <div class="robot-image">
-              <img src="./IMAGE/WECLOME ROBOT.jpg" />
-            </div>
+        <div class="wrapper">
+          <div class="form">
+            <form>
+              <h2>GOT ANY QUESTIONS!</h2>
+              <input type="text" id="name" name="name" placeholder="Type your name here" /><br />
+              <input type="text" id="phone" name="phone" placeholder="Type your Phone Number here" /><br />
+              <input type="mail" id="mail" name="mail" placeholder="Type your Email here" /><br />
+              <textarea rows="2" cols="50" name="comment" placeholder="Type your question here..."></textarea><br />
+              <!-- <button type="submit">SUBMIT</button> -->
+            </form>
+          </div>
+          <div class="robot-image">
+            <img src="./IMAGE/WECLOME ROBOT.jpg" />
           </div>
         </div>
-      </footer>
-      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-      <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+      </div>
+    </footer>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+    <script defer src="./JS/firebaseConfiguration.js"></script>
+    <script defer src="./JS/singleBlog.js"></script>
+    <script>
+    
+  //  console.log(getPosts);
 
-      <script defer src="./JS/firebaseConfiguration.js"></script>
-      <script defer src="./JS/singleBlog.js"></script>
+    
+    </script>
 </body>
-
 </html>
