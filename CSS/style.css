@@ -428,6 +428,8 @@ label {
 .blogs{
  display: flex;
  flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
 }
 .B_description{
     flex-direction: column;
@@ -443,7 +445,7 @@ label {
     padding: 2rem 0;
      
 }
-.btn-blog{
+.btn-blog, .add-post{
     padding: 10px;
     margin-top: 1rem;
     cursor: pointer;
@@ -538,7 +540,8 @@ div.wrapper div.form input, textarea{
     margin-bottom: 25px;
     padding: 5px 0;
     font-size: 14px;
-    width: 300px;;   
+    width: 300px;
+    color: black;   
 }
 
 div.wrapper div.form button{
@@ -569,55 +572,3 @@ div.wrapper div.form button{
   left: 0%;
 }
 /* footer */
-/* @media (max-width: 560px) {
-  .content .info h2 {
-    font-size: 35px;
-    line-height: 50px;
-  }
-
-  .content .info h2 span {
-    font-size: 30px;
-    font-weight: 600p;
-  }
-  .content .info p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 960px) {
-  header .navigation {
-    display: none;
-  }
-}
-body {
-    display:flex
-  }
-/* Mobile Styles */
-/* @media only screen and (max-width: 425px) {
-  body {
-    background-color: darkcyan;
-    flex-direction: column;
-  }
-} */
-
-/* Tablet Styles */
-/* @media only screen and (min-width: 426px) and (max-width: 960px){
-  body {
-    background-color: maroon;
-    flex-direction: column;
-  }
-} */
-
-/* Desktop Styles */
-/* @media only screen and (min-width: 961px) and (max-width: 1439px) {
-  body {
-   background-color: gold;
-  }
-} */
-
-/* Widescreens Styles */
-/* @media only screen and (min-width: 1440px) {
-  body {
-    background-color: grey;
-  }
-} */

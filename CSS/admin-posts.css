@@ -205,6 +205,8 @@ form div{
 .blogs{
 display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .B_description{
     width: 300px;
@@ -224,8 +226,13 @@ display: flex;
 .blog-title{
     padding: 2rem 0;    
 }
-
-.btn-blog{
+.buttons{
+  display:flex;
+  width:250px;
+  justify-content: space-between;
+  text-align: center;
+}
+.btn-blog, .add-post{
     padding: 5px;
     margin-top: 1rem;
     cursor: pointer;

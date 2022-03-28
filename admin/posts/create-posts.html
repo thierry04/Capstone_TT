@@ -76,15 +76,15 @@
                  <label>
                    Image</label>
                   </div>
-                  <input class="input" type="file" name="file" class="fa-file-image"id="imageFile">
+                  <input class="input" type="file" name="imageUrl" class="fa-file-image"id="imageFile">
              </div> 
              <div class="">
                <div class="input"><label>
                  body</label></div>
                 <textarea
                 
-                  name="myTextarea"
-                  id="myTextarea"
+                  name="content"
+                  id="content"
                   required
                   cols="100"
                   rows="7"
@@ -99,9 +99,9 @@
                 </select>
                 <!-- <textarea name="body" id="blog"></textarea> -->
              </div> 
-             <div>
-               <button class="btn-blog" id="createBlog" type="submit" class="btn btn-big">Add Post</button>
-                <button class="btn-blog" id="update__blog" type="submit" class="btn btn-big">Update </button>
+             <div class="buttons">
+               <div class="btn-blog add-post" id="createBlog">Add Post</div>
+                <div class="btn-blog btn btn-big" id="updateBlog">Update </div>
              </div> 
            </form>
          </div>
@@ -125,14 +125,14 @@
         } );
 </script>
 
-    <script src="../../JS/scripts.js"></script>
+    <script defer src="../../JS/scripts.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script> 
     <script defer src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script> 
-    <script defer  src="./../../JS/firebaseConfiguration.js"></script> -->
+    <script defer  src="./../../JS/firebaseConfiguration.js"></script>
 
-    <!-- <script src="./../../JS/dashboard_blogs.js"></script>
+    <script defer src="./../../JS/dashboard_blogs.js"></script>
 
   </body>
 </html>
